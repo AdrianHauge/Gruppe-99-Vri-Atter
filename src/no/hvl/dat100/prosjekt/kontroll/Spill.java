@@ -30,7 +30,10 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.constructor("Spill"));
+		bord = new Bord();
+		syd = new SydSpiller(Spillere.SYD);
+		nord = new NordSpiller(Spillere.NORD);
+
 		// TODO - END
 		
 	}
@@ -44,7 +47,7 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bord;
 
 		// TODO - END
 		
@@ -59,7 +62,7 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return syd;
 
 		// TODO - END
 		
@@ -74,7 +77,7 @@ public class Spill {
 		
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.method());
+		return nord;
 
 		// TODO - END
 	}
@@ -92,7 +95,18 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		nord = new NordSpiller(Spillere.SYD);
+		syd = new SydSpiller(Spillere.NORD);
+		
+		bord.getBunkeFra();
+		bord.getBunkeTil();
+		
+		KortUtils.stokk(bord.getBunkeFra());
+		
+		delutKort();
+		
+        bord.vendOversteFraBunke();
+
 		// TODO - END
 	}
 
@@ -105,6 +119,7 @@ public class Spill {
 		// TODO - START
 		
 		throw new UnsupportedOperationException(TODO.method());
+
 		// TODO - END
 	}
 
@@ -122,7 +137,13 @@ public class Spill {
 
 		// TODO - START
 			
-		throw new UnsupportedOperationException(TODO.method());
+		spiller.trekker(null);
+		
+		if(bord.bunkefraTom() == true) 
+			
+			{bord.snuTilBunken();}
+			
+		return null;
 
 		// TODO - END
 	}
