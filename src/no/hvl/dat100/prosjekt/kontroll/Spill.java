@@ -29,11 +29,10 @@ public class Spill {
 	public Spill() {
 		
 		// TODO - START
-		
+		 // Opprett bord, nord og syd
 		bord = new Bord();
 		syd = new SydSpiller(Spillere.SYD);
 		nord = new NordSpiller(Spillere.NORD);
-
 		// TODO - END
 		
 	}
@@ -114,13 +113,16 @@ public class Spill {
 	 * Deler ut kort til nord og syd.
 	 * 
 	 */
-	private void delutKort() {
+	private void delutKort(KortSamling fraBunke) {
 
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		// Del ut kort til nord og syd
+		for (int i = 0; i < ANTALL_KORT_START; i++) {
+	        nord.trekker(fraBunke.taSiste());
+	        syd.trekker(fraBunke.taSiste());
 
 		// TODO - END
+	}
 	}
 
 	/**
@@ -133,18 +135,23 @@ public class Spill {
 	 * 
 	 * @return kortet som trekkes.
 	 */
-	public Kort trekkFraBunke(ISpiller spiller) {
+	public Kort trekkFraBunke(ISpiller spiller, KortSamling fraBunke) {
 
 		// TODO - START
 			
-		spiller.trekker(null);
-		
-		if(bord.bunkefraTom() == true) 
-			
-			{bord.snuTilBunken();}
-			
-		return null;
-
+		// Trekk et kort fra fra-bunke til spilleren
+	    if (fraBunke.erTom()) {
+	        // Hvis fra-bunke er tom, stokk til-bunke og ta kort fra den
+	        KortSamling tilBunke = bord.getBunkeTil();
+	        KortUtils.stokk(tilBunke);
+	        Kort kort = tilBunke.taSiste();
+	        spiller.trekker(kort);
+	        return kort;
+	    } else {
+	        Kort kort = fraBunke.taSiste();
+	        spiller.trekker(kort);
+	        return kort;
+	    }
 		// TODO - END
 	}
 
@@ -160,7 +167,8 @@ public class Spill {
 		
 		// TODO - START
 		// Hint: se på hvilke metoder som er tilgjengelig på en spiller
-		throw new UnsupportedOperationException(TODO.method());
+		 // Henter neste handling for spilleren
+		 return spiller.nesteHandling(null);
 
 		// TODO - END
 		
@@ -178,7 +186,7 @@ public class Spill {
 	 * 
 	 * @return true dersom spilleren har kortet, false ellers.
 	 */
-	public boolean leggnedKort(ISpiller spiller, Kort kort) {
+public boolean leggnedKort(ISpiller spiller, Kort kort) {
 		
 		// TODO - START
 		
@@ -186,6 +194,7 @@ public class Spill {
 
 		// TODO - END
 	}
+	
 
 	/**
 	 * Metode for å si forbi. Må nullstille antall ganger spilleren har trukket
@@ -197,8 +206,10 @@ public class Spill {
 	public void forbiSpiller(ISpiller spiller) {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		//nullstiller tellingen av antall trekk som spilleren har gjort.
+
+
+		 spiller.setAntallTrekk(0);
 	
 		// TODO - END
 	}
