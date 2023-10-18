@@ -59,18 +59,14 @@ public class KortSamling {
 
 	// TODO - START
 
-	public Kort[] getkortene() {
-		Kort[] kortene = new Kort[antall];
-
-		for (int i = 0; i < antall; i++) {
-			kortene[i] = samling[i];
-
-		}
-		return kortene;
+	public int getAntalKort() {
+		
+		
+		return antall;
 }
 
 		// TODO - END
-	}
+	
 
 	/**
 	 * Sjekker om samlinga er tom.
