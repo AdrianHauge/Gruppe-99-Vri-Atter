@@ -23,10 +23,11 @@ public class Bord {
 	public Bord() {
 		
 		// TODO - START
-
+		
+		bunkeTil = new KortSamling();
 		bunkeFra = new KortSamling();
 		bunkeFra.leggTilAlle();
-		bunkeTil = new KortSamling();
+		
 
 		
 		// TODO - END
@@ -77,7 +78,7 @@ public class Bord {
 		
 		// TODO - START
 		
-		return bunkefra.erTom();
+		return bunkeFra.erTom();
 	
 		// TODO - END
 		
@@ -173,7 +174,18 @@ public class Bord {
 
 		// TODO - START
 		
+		KortSamling kort = new KortSamling();
+		
+		if(bunkeFra.erTom()) {
+			
+			
+			
+		}	
+		
+		
 		throw new UnsupportedOperationException(TODO.method());
+		
+		
 		// TODO - END
 	}
 		

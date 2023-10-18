@@ -30,6 +30,7 @@ public class Spill {
 		
 		// TODO - START
 		 // Opprett bord, nord og syd
+		
 		bord = new Bord();
 		syd = new SydSpiller(Spillere.SYD);
 		nord = new NordSpiller(Spillere.NORD);
@@ -102,7 +103,7 @@ public class Spill {
 		
 		KortUtils.stokk(bord.getBunkeFra());
 		
-		delutKort();
+		delutKort(null);
 		
         bord.vendOversteFraBunke();
 
