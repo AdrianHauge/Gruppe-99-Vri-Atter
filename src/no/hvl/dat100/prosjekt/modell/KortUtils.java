@@ -36,7 +36,7 @@ public class KortUtils {
 		// TODO - START{
 
 		        Random random = new Random();
-		        int n = samling.getAntallKort();
+		        int n = samling.getAntalKort();
 
 		        for (int i = n - 1; i > 0; i--) {
 		            int j = random.nextInt(i + 1);

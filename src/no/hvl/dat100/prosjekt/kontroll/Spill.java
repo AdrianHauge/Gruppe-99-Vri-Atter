@@ -136,12 +136,13 @@ public class Spill {
 	 * 
 	 * @return kortet som trekkes.
 	 */
-	public Kort trekkFraBunke(ISpiller spiller, KortSamling fraBunke) {
+	public Kort trekkFraBunke(ISpiller spiller) {
 
 		// TODO - START
 			
 		// Trekk et kort fra fra-bunke til spilleren
-	    if (fraBunke.erTom()) {
+		KortSamling bunkeFra = new KortSamling();
+	    if (bunkeFra.erTom() ) {
 	        // Hvis fra-bunke er tom, stokk til-bunke og ta kort fra den
 	        KortSamling tilBunke = bord.getBunkeTil();
 	        KortUtils.stokk(tilBunke);
@@ -149,7 +150,7 @@ public class Spill {
 	        spiller.trekker(kort);
 	        return kort;
 	    } else {
-	        Kort kort = fraBunke.taSiste();
+	        Kort kort = bunkeFra.taSiste();
 	        spiller.trekker(kort);
 	        return kort;
 	    }
