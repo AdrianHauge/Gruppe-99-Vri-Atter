@@ -120,6 +120,7 @@ public class Bord {
 		
 		// TODO - START
 		
+		
 		Kort kort = bunkeFra.taSiste();
 		
 		bunkeTil.leggTil(kort);
@@ -178,13 +179,16 @@ public class Bord {
 		
 		if(bunkeFra.erTom()) {
 			
+			Kort snuKort = bunkeFra.taSiste();
 			
+		bunkeFra.getAllekort();
+		
+		KortUtils.stokk(bunkeFra);
+		
+		bunkeTil.leggTil(snuKort);
+		
 			
-		}	
-		
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
+		}		
 		
 		// TODO - END
 	}
